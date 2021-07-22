@@ -222,11 +222,6 @@ public class BigRatEntity extends AnimalEntity implements Angerable, IAnimatable
     @Override
     public void tickMovement() {
         super.tickMovement();
-
-        if (!this.world.isClient && this.isAlive() && !this.isBaby() && this.random.nextFloat() <= 0.007f && this.world.getEntitiesByClass(ItemEntity.class, this.getBoundingBox().expand(8.0d), item -> item.getStack().getItem().isIn(ItemTags.FLOWERS)).size() <= 4) {
-            this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0f, (this.random.nextFloat() - this.random.nextFloat()) * 0.2f + 1.0f);
-            this.dropItem(ItemTags.FLOWERS.getRandom(this.random));
-        }
     }
 
     @Override

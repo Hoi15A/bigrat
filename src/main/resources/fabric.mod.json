@@ -5,18 +5,18 @@
   "version": "${version}",
 
   "name": "Big Rat",
-  "description": "BIG RAT",
+  "description": "BIG RAT - Modified version",
   "icon": "pack.png",
 
   "authors": [
-    "Dodo Gang"
+    "Dodo Gang",
+    "Austin (Hoi_A)"
   ],
   "contributors": [],
   "contact": {
-    "sources": "https://github.com/dodogang/bigrat",
-    "issues": "https://github.com/dodogang/bigrat/issues"
+    "sources": "https://github.com/Hoi15A/bigrat",
+    "issues": "https://github.com/Hoi15A/bigrat/issues"
   },
-
   "environment": "*",
   "entrypoints": {
     "main": [
