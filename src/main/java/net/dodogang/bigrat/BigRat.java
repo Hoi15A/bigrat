@@ -2,6 +2,7 @@ package net.dodogang.bigrat;
 
 import net.dodogang.bigrat.init.BigRatEntities;
 import net.dodogang.bigrat.init.BigRatItems;
+import net.dodogang.bigrat.init.BigRatSoundEvents;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
 import net.minecraft.item.ItemGroup;
@@ -11,6 +12,7 @@ import net.minecraft.util.Identifier;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import software.bernie.example.GeckoLibMod;
 
 public class BigRat implements ModInitializer {
     public static final String MOD_ID = "bigrat";
@@ -22,7 +24,12 @@ public class BigRat implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        GeckoLibMod.DISABLE_IN_DEV = true;
+
         log("Initializing");
+
+        //System.out.println("check");
+        BigRatSoundEvents.init();
 
         new BigRatItems();
         new BigRatEntities();
