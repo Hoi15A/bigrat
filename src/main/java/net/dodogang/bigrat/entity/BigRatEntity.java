@@ -158,7 +158,7 @@ public class BigRatEntity extends AnimalEntity implements Angerable, IAnimatable
 
     @Override
     protected SoundEvent getAmbientSound() {
-        return this.isBaby() ? BigRatSoundEvents.ENTITY_BIG_RAT_AMBIENT_BABY : BigRatSoundEvents.ENTITY_BIG_RAT_AMBIENT;
+        return BigRatSoundEvents.ENTITY_BIG_RAT_AMBIENT;
     }
 
     @Override
@@ -168,20 +168,29 @@ public class BigRatEntity extends AnimalEntity implements Angerable, IAnimatable
 
     @Override
     protected SoundEvent getDeathSound() {
-        return BigRatSoundEvents.ENTITY_BIG_RAT_DEATH;
+        return SoundEvents.ENTITY_GENERIC_DEATH;
+    }
+
+
+    public void playAmbientSound() {
+        this.playSound(SoundEvents.ENTITY_POLAR_BEAR_AMBIENT, 0.25F, 2.0F);
     }
 
     @Override
     protected void playStepSound(BlockPos pos, BlockState state) {
-        this.playSound(BigRatSoundEvents.ENTITY_BIG_RAT_STEP, 0.15F, 1.0F);
+        this.playSound(SoundEvents.ENTITY_POLAR_BEAR_STEP, 0.15F, 1.0F);
     }
 
     protected void playWarningSound() {
         if (this.warningSoundCooldown <= 0) {
-            this.playSound(BigRatSoundEvents.ENTITY_BIG_RAT_WARNING, 1.0F, this.getSoundPitch());
+            this.playSound(SoundEvents.ENTITY_POLAR_BEAR_WARNING, 1.0F, 2.0F);
             this.warningSoundCooldown = 40;
         }
 
+    }
+
+    protected void playHurtSound(DamageSource source) {
+       this.playSound(SoundEvents.ENTITY_POLAR_BEAR_HURT, 1, 2.0F);
     }
 
     @Override
